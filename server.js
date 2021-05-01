@@ -19,7 +19,7 @@ app.use(express.static('views/articles'))
 
 app.get('/', async (req, res) => {
   const articles = await Article.find().sort({ createdAt: 'desc' })
-  res.render('v/articles/index', { articles: articles })
+  res.render('/articles/index', { articles: articles })
 })
 
 app.use('/articles', articleRouter)
